@@ -33,7 +33,7 @@
             name="countSelector"
             id="countSelector"
           >
-            <option style="color: black" value="4">4</option>
+            <option selected style="color: black" value="4">4</option>
             <option style="color: black" value="5">5</option>
             <option style="color: black" value="6">6</option>
           </select>
@@ -47,7 +47,9 @@
               id="firstBand"
               onchange="calculateResistance()"
             >
-              <option style="background-color: brown" value="1">1 Brown</option>
+              <option selected style="background-color: brown" value="1">
+                1 Brown
+              </option>
               <option style="background-color: red" value="2">2 Red</option>
               <option style="background-color: orange" value="3">
                 3 Orange
@@ -71,7 +73,11 @@
               id="secondBand"
               onchange="calculateResistance()"
             >
-              <option style="background-color: black; color: white" value="0">
+              <option
+                selected
+                style="background-color: black; color: white"
+                value="0"
+              >
                 0 Black
               </option>
               <option style="background-color: brown" value="1">1 Brown</option>
@@ -98,7 +104,11 @@
               id="thirdBand"
               onchange="calculateResistance()"
             >
-              <option style="background-color: black; color: white" value="0">
+              <option
+                selected
+                style="background-color: black; color: white"
+                value="0"
+              >
                 0 Black
               </option>
               <option style="background-color: brown" value="1">1 Brown</option>
@@ -125,7 +135,11 @@
               id="multiplierBand"
               onchange="calculateResistance()"
             >
-              <option style="background-color: black; color: white" value="1">
+              <option
+                selected
+                style="background-color: black; color: white"
+                value="1"
+              >
                 x1 Black
               </option>
               <option style="background-color: brown" value="10">
@@ -164,7 +178,7 @@
               id="toleranceBand"
               onchange="calculateResistance()"
             >
-              <option style="background-color: brown" value="1">
+              <option selected style="background-color: brown" value="1">
                 ± 1% Brown
               </option>
               <option style="background-color: red" value="2">± 2% Red</option>
@@ -190,8 +204,13 @@
             <select
               name="temperatureCoefficientBand"
               id="temperatureCoefficientBand"
+              onchange="calculateResistance()"
             >
-              <option style="background-color: black; color: white" value="250">
+              <option
+                selected
+                style="background-color: black; color: white"
+                value="250"
+              >
                 250 Black
               </option>
               <option style="background-color: brown" value="100">

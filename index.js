@@ -4,32 +4,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function bandCountChange() {
   let s = document.getElementById("countSelector");
-  console.log(s);
-  console.log(s.value);
+  let tempco = document.getElementById("tempco");
+  let thirdband = document.getElementById("third");
+  let tempcoCalc = document.getElementById("tempcoCalc");
+
   if (s.value === "4") {
-    let tempco = document.getElementById("tempco");
-    let thirdband = document.getElementById("third");
-    let tempcoCalc = document.getElementById("tempcoCalc");
     tempcoCalc.style.display = "none";
     tempco.style.display = "none";
     thirdband.style.display = "none";
 
     calculateResistance();
   } else if (s.value === "5") {
-    let tempco = document.getElementById("tempco");
-    let thirdband = document.getElementById("third");
-    let tempcoCalc = document.getElementById("tempcoCalc");
     tempcoCalc.style.display = "none";
     tempco.style.display = "none";
     thirdband.style.display = "block";
     calculateResistance();
   } else {
-    let tempco = document.getElementById("tempco");
-    let tempcoCalc = document.getElementById("tempcoCalc");
-    let thirdband = document.getElementById("third");
     tempco.style.display = "block";
     tempcoCalc.style.display = "flex";
     thirdband.style.display = "block";
+    calculateResistance();
   }
 }
 
@@ -45,7 +39,7 @@ function calculateResistance() {
   );
   let calculation = document.getElementById("resistanceCalc");
   let toleranceCalc = document.getElementById("toleranceCalc");
-  let tempcoCalc = document.getElementById("tempcoCalc");
+  let tempcoCalcInner = document.getElementById("tempcoCalcInner");
   let minimumCalc = document.getElementById("minimumCalc");
   let maximumCalc = document.getElementById("maximumCalc");
 
@@ -60,8 +54,9 @@ function calculateResistance() {
         parseInt(secondBand.value) * 10 +
         parseInt(thirdBand.value) * 1) *
       parseFloat(multiplierBand.value);
-
-    tempcoCalc.innerHTML = parseInt(temperatureCoefficientBand);
+  }
+  if (s.value === "6") {
+    tempcoCalcInner.innerHTML = parseInt(temperatureCoefficientBand.value);
   }
   let res = formatCalculationResult(resistance, 2);
   calculation.innerHTML = res;
