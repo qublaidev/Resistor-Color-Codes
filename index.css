@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: aliceblue;
+  padding: 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  cursor: default;
+}
+
+.chart {
+  margin: 1rem 0;
+}
+
+.finder {
+  margin: 1rem 0;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.finder h2 {
+  text-decoration: underline;
+  text-decoration-color: aqua;
+}
+.band-selector {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+  gap: 16px;
+  align-items: center;
+}
+.band-selector.bands {
+  justify-content: space-around;
+}
+
+.band {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#third,
+#tempco,
+#tempcoCalc {
+  display: none;
+}
+
+select {
+  padding: 0.5em 1em;
+  border: 2px solid black;
+  border-radius: 2px;
+}
+
+option {
+  font-weight: 500;
+  color: white;
+  padding: 1rem;
+}
+.calculations {
+  align-self: flex-start;
+}
+.calculation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 0;
+  gap: 16px;
+}
+.calculation h3 {
+  width: 100px;
+}
+.hide {
+  display: none;
+}
+
+.chart-image {
+  max-width: 320px;
+  height: auto;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 640px) {
+  .band-selector {
+    flex-direction: row;
+  }
+  .chart-image {
+    max-width: 640px;
+    height: auto;
+  }
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script type="text/javascript" src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Resistor Color Codes</title>
+  </head>
+  <body>
+    <nav class="header">
+      <img
+        src="images/resistor-logo.svg"
+        alt="Resistor Symbol Logo"
+        height="48px"
+      />
+      <h1>Resistor Color Codes</h1>
+    </nav>
+    <div class="main">
+      <div class="finder">
+        <h2>Calculator</h2>
+        <div class="band-selector">
+          <h4>Please Select Band Count</h4>
+          <select
+            onchange="bandCountChange()"
+            name="countSelector"
+            id="countSelector"
+          >
+            <option style="color: black" value="4">4</option>
+            <option style="color: black" value="5">5</option>
+            <option style="color: black" value="6">6</option>
+          </select>
+        </div>
+        <hr />
+        <div class="band-selector bands">
+          <div class="band" id="first">
+            <h4>1st Band</h4>
+            <select
+              name="firstBand"
+              id="firstBand"
+              onchange="calculateResistance()"
+            >
+              <option style="background-color: brown" value="1">1 Brown</option>
+              <option style="background-color: red" value="2">2 Red</option>
+              <option style="background-color: orange" value="3">
+                3 Orange
+              </option>
+              <option style="background-color: yellow; color: black" value="4">
+                4 Yellow
+              </option>
+              <option style="background-color: green" value="5">5 Green</option>
+              <option style="background-color: blue" value="6">6 Blue</option>
+              <option style="background-color: violet" value="7">
+                7 Violet
+              </option>
+              <option style="background-color: gray" value="8">8 Gray</option>
+              <option style="color: black" value="9">9 White</option>
+            </select>
+          </div>
+          <div class="band" id="second">
+            <h4>2nd Band</h4>
+            <select
+              name="secondBand"
+              id="secondBand"
+              onchange="calculateResistance()"
+            >
+              <option style="background-color: black; color: white" value="0">
+                0 Black
+              </option>
+              <option style="background-color: brown" value="1">1 Brown</option>
+              <option style="background-color: red" value="2">2 Red</option>
+              <option style="background-color: orange" value="3">
+                3 Orange
+              </option>
+              <option style="background-color: yellow; color: black" value="4">
+                4 Yellow
+              </option>
+              <option style="background-color: green" value="5">5 Green</option>
+              <option style="background-color: blue" value="6">6 Blue</option>
+              <option style="background-color: violet" value="7">
+                7 Violet
+              </option>
+              <option style="background-color: gray" value="8">8 Gray</option>
+              <option style="color: black" value="9">9 White</option>
+            </select>
+          </div>
+          <div class="band" id="third">
+            <h4>3rd Band</h4>
+            <select
+              name="thirdBand"
+              id="thirdBand"
+              onchange="calculateResistance()"
+            >
+              <option style="background-color: black; color: white" value="0">
+                0 Black
+              </option>
+              <option style="background-color: brown" value="1">1 Brown</option>
+              <option style="background-color: red" value="2">2 Red</option>
+              <option style="background-color: orange" value="3">
+                3 Orange
+              </option>
+              <option style="background-color: yellow; color: black" value="4">
+                4 Yellow
+              </option>
+              <option style="background-color: green" value="5">5 Green</option>
+              <option style="background-color: blue" value="6">6 Blue</option>
+              <option style="background-color: violet" value="7">
+                7 Violet
+              </option>
+              <option style="background-color: gray" value="8">8 Gray</option>
+              <option style="color: black" value="9">9 White</option>
+            </select>
+          </div>
+          <div class="band" id="multiplier">
+            <h4>Multiplier</h4>
+            <select
+              name="multiplierBand"
+              id="multiplierBand"
+              onchange="calculateResistance()"
+            >
+              <option style="background-color: black; color: white" value="1">
+                x1 Black
+              </option>
+              <option style="background-color: brown" value="10">
+                x10 Brown
+              </option>
+              <option style="background-color: red" value="100">
+                x100 Red
+              </option>
+              <option style="background-color: orange" value="1000">
+                x1k Orange
+              </option>
+              <option
+                style="background-color: yellow; color: black"
+                value="10000"
+              >
+                x10k Yellow
+              </option>
+              <option style="background-color: green" value="100000">
+                x100k Green
+              </option>
+              <option style="background-color: blue" value="1000000">
+                x1M Blue
+              </option>
+              <option style="background-color: gold; color: black" value="0.1">
+                ÷10 Gold
+              </option>
+              <option style="background-color: silver" value="0.01">
+                ÷100 Silver
+              </option>
+            </select>
+          </div>
+          <div class="band" id="tolerance">
+            <h4>Tolerance</h4>
+            <select
+              name="toleranceBand"
+              id="toleranceBand"
+              onchange="calculateResistance()"
+            >
+              <option style="background-color: brown" value="1">
+                ± 1% Brown
+              </option>
+              <option style="background-color: red" value="2">± 2% Red</option>
+              <option style="background-color: green" value="0.5">
+                ± 0.5% Green
+              </option>
+              <option style="background-color: blue" value="0.25">
+                ± 0.25% Blue
+              </option>
+              <option style="background-color: violet" value="0.1">
+                ± 0.1% Violet
+              </option>
+              <option style="background-color: gold; color: black" value="5">
+                ± 5% Gold
+              </option>
+              <option style="background-color: silver" value="10">
+                ± 10% Silver
+              </option>
+            </select>
+          </div>
+          <div class="band" id="tempco">
+            <h4>TempCo</h4>
+            <select
+              name="temperatureCoefficientBand"
+              id="temperatureCoefficientBand"
+            >
+              <option style="background-color: black; color: white" value="250">
+                250 Black
+              </option>
+              <option style="background-color: brown" value="100">
+                100 Brown
+              </option>
+              <option style="background-color: red" value="50">50 Red</option>
+              <option style="background-color: orange" value="15">
+                15 Orange
+              </option>
+              <option style="background-color: yellow; color: black" value="25">
+                25 Yellow
+              </option>
+              <option style="background-color: green" value="20">
+                20 Green
+              </option>
+              <option style="background-color: blue" value="10">10 Blue</option>
+              <option style="background-color: violet" value="5">
+                5 Violet
+              </option>
+              <option style="background-color: gray" value="1">1 Gray</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="calculations">
+        <div class="calculation">
+          <h3>Resistance:</h3>
+          <div id="resistanceCalc"></div>
+          <h5>Ohms</h5>
+        </div>
+        <div class="calculation">
+          <h3>Tolerance:</h3>
+          <div id="toleranceCalc"></div>
+        </div>
+        <div class="calculation">
+          <h3>Minimum:</h3>
+          <div id="minimumCalc"></div>
+          <h5>Ohms</h5>
+        </div>
+        <div class="calculation">
+          <h3>Maximum:</h3>
+          <div id="maximumCalc"></div>
+          <h5>Ohms</h5>
+        </div>
+        <div class="calculation" id="tempcoCalc">
+          <h3>Tempco:</h3>
+          <div id="tempcoCalcInner"></div>
+          <h5>ppm/°C</h5>
+        </div>
+      </div>
+      <div class="chart">
+        <!-- <h2>Color Code Chart</h2> -->
+        <img
+          class="chart-image"
+          src="images/color-code-chart.jpg"
+          alt="Color Code Chart"
+        />
+      </div>
+    </div>
+  </body>
+</html>
