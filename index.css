@@ -13,6 +13,16 @@
   padding: 0 1rem;
 }
 
+.footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+hr.divider {
+  margin: 0 auto;
+  color: aquamarine;
+  width: 90%;
+}
 .header {
   display: flex;
   align-items: center;
@@ -21,6 +31,22 @@
   background-color: aliceblue;
   padding: 1rem;
   text-align: center;
+}
+.calculator-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+a.github-link {
+  text-decoration: none;
+  color: black;
+}
+
+a.github-link:hover {
+  text-decoration: underline;
+  text-decoration-color: aqua;
 }
 
 .header h1 {
